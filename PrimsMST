@@ -1,0 +1,44 @@
+#include<iostream.h>
+#include<conio.h>
+void prims(int grap[30][30],int v,int ver)
+{
+int mst[20]={0},INT=1;
+cout<<"the minimum width is->\n";
+for(int i=0;i<ver;i++)
+  {
+  mst[i]=1;
+  if(mst[i]==1)
+  {
+     for(v=0;v<ver;v++)
+     {
+      if(grap[i][v]!=0 && grap[i][v]>INT)
+      {
+	INT=grap[i][v];
+	cout<<"   "<<i<<"  -  "<<v<<" -> "<<INT<<"\n";
+      }
+      }
+  }
+  }
+}
+void main()
+{
+int v,ver;
+clrscr();
+cout<<"enter the size of graph in row,coloumn";
+cin>>v;
+int graph[30][30];
+cout<<"enter the width of graph";
+for(int i=0;i<v;i++)
+{
+ for(int j=0;j<v;j++)
+ {
+ cin>>graph[i][j];
+ }
+ cout<<"\n";
+}
+
+cout<<"enter maximum number of verrttex->";
+cin>>ver;
+prims(graph,v,ver);
+getch();
+}
